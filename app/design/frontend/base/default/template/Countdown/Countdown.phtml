@@ -1,0 +1,66 @@
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('Countdown/css/flipclock.css') ?>"/>
+<?php 
+$settime = Mage::getStoreConfig('countdown/countdown/settime',Mage::app()->getStore()); 
+$now = new DateTime(date('Y-m-d H:i:s'));
+$ref = new DateTime($settime);
+$diff = $now->diff($ref);
+$days = ($diff->days)+(($diff->h+(($diff->i+($diff->s/60))/60))/24);
+$remainday = Mage::getStoreConfig('countdown/countdown/timer',Mage::app()->getStore())-$days;
+if($now >= $ref){
+	if($remainday>0){
+	?>
+	<div id="loading-mask">
+		<p id="loading_mask_loader" class="loader">
+			<img alt="Loading..." src="<?php echo $this->getSkinUrl('Countdown/images/ajax-loader-tr.gif');?>"/><br/>Please wait...
+		</p>
+	</div>
+	<div class="clockalign" style="display:none;">			
+		<div class="header waypoint" id="download">	
+			<div class="calign">
+			<?php $clockStatus = Mage::getStoreConfig('countdown/countdown/clockstatus', Mage::app()->getStore());?>		
+				<div class="wk_clockmsg" style="display:none;">
+					<a href="mailto:<?php echo Mage::getStoreConfig('countdown/countdown/setemail',Mage::app()->getStore());?>" target="_newtab">
+						<?php $wkclockmsg = Mage::getStoreConfig('countdown/countdown/setmessage',Mage::app()->getStore());?>
+						<?php $l=strlen($wkclockmsg); if($l>83){ echo substr($wkclockmsg,0,83)."..";}else {echo $wkclockmsg;}?>	
+					</a>
+				</div>	
+			<?php if($clockStatus){?>
+				<div class="daily-counter" id="wk_flipclock" style="display:none;"></div>	
+			<?php }?>
+			</div>
+		</div>	
+	</div>
+	<script type="text/javascript">
+	if (typeof jQuery == 'undefined')	{
+			 document.write(unescape("%3Cscript src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+		}	
+	</script>
+	<script src="<?php echo $this->getSkinUrl('Countdown/js/flipclock/flipclock.min.js');?>"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		jQuery(document).ready(function(){
+			jQuery('body').css('background-color','#000');	
+			var windowWidth = jQuery(document).innerWidth(); 
+			var windowHeight = jQuery(document).innerHeight(); 
+			jQuery('#loading-mask').css('width',windowWidth);
+			jQuery('#loading-mask').css('height',windowHeight);
+			jQuery('.clockalign .header').css('width',windowWidth);
+			jQuery('.clockalign .header').css('height',windowHeight);	
+			var clock = jQuery('.daily-counter').FlipClock(3600 * 24 * <?php echo $remainday;?>, {
+				clockFace: 'DailyCounter',
+				countdown: true	}
+			); 			
+			
+			
+			jQuery('#loading-mask').css('display', function(index) {
+				jQuery('.clockalign').css('display','block');		
+				jQuery('.wk_clockmsg').css('display','block');		
+				jQuery('.daily-counter').css('display','block');
+				return 'none';
+			});
+		});
+	</script>
+	<?php die();
+	}
+}
+?>

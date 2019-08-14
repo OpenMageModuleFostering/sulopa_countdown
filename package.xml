@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>Sulopa_Countdown</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Inserts eye-catching countdown timer to indicate the beginning or ending time of your promotions, sales, discounts, registrations, or whatever else.</summary>
+    <description>Often you may want to put your website on maintenance mode due to some technical or server related issues, or you may want to update or change some feature or theme of your website. This is when Easy Site Maintenance extension can come to your rescue.&#xD;
+&#xD;
+Easy Site Maintenance Extension enables you put your online store in maintenance mode for specific period of time from the frontend which you can configure from the backend.</description>
+    <notes>Version 1.0.0</notes>
+    <authors><author><name>Sulopa Sulotion</name><user>sulopa</user><email>info@sulopa.com</email></author></authors>
+    <date>2015-07-30</date>
+    <time>07:37:33</time>
+    <contents><target name="magecommunity"><dir name="Sulopa"><dir name="Countdown"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><file name="Date.php" hash="f020430d992d4290ad910e41b2f40efc"/></dir></dir></dir><file name="Countdown.php" hash="bb53361dfe89beb96705a613ea29ddc9"/></dir><dir name="Controller"><dir name="Router"><file name="Standard.php" hash="1cbceccd01d07416aa1df4f6ee6f4d09"/></dir></dir><dir name="Helper"><file name="Data.php" hash="302832d24d49d6dbb7344c459b5a3130"/></dir><dir name="etc"><file name="config.xml" hash="cd9b390fa4e56d8c27def5c99c4312fc"/><file name="system.xml" hash="3d8404e8fcb68efc3f2bfbd976d51221"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="Countdown.xml" hash="686eff2ac9fc8a9bdc6f98ec946a72fe"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="Countdown"><file name="Countdown.phtml" hash="f890ea022a821e42d0fa56f872404dfb"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Sulopa_Countdown.xml" hash="c069fd2431c2a551e7d11fdb2ea43140"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="Countdown"><dir name="css"><file name="flipclock.css" hash="350e78a3e0f3247b685598774c721f79"/></dir><dir name="images"><file name="ajax-loader-tr.gif" hash="1ae32bc8232ff2527c627e5b38eb319a"/><file name="binding_dark.png" hash="e547a578794634635212f480b58e091d"/></dir><dir name="js"><dir name="flipclock"><file name="flipclock.min.js" hash="8d23ddd1ba4433b66e9f1b63c0bb0631"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

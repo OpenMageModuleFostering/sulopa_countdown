@@ -1,0 +1,93 @@
+<?xml version="1.0"?> 
+<config>
+    <tabs>
+        <sulopabase>
+            <label>Sulopa Extensions</label>
+            <sort_order>400</sort_order>
+        </sulopabase>
+    </tabs>
+    <sections>
+        <countdown>
+            <label>Sulopa Clock</label>
+            <tab>sulopabase</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>              
+                <countdown>
+                    <label>Sulopa Clock parameters</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<clockstatus>
+                            <label>Show Clock Status</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+			 			    <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>                           		
+                        </clockstatus>	
+                        <timer>
+                            <label>Set Day</label>
+                            <frontend_type>text</frontend_type>
+			 			    <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>e.g 3 day</comment>				
+                        </timer>						
+						<settime>
+                            <label>Set timer</label>
+                            <frontend_type>text</frontend_type>							
+							<frontend_model>sulopa_countdown_block_adminhtml_system_config_date</frontend_model>
+			 			    <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>e.g 06-05-2013 00:00:00</comment>				
+                        </settime>
+						<setmessage>
+                            <label>Set Message</label>
+                            <frontend_type>textarea</frontend_type>
+			 			    <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>                            		
+                        </setmessage>
+						<enabled translate="label">
+                            <label>Store Offline</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>						
+						<setemail>
+                            <label>Set Email</label>
+                            <frontend_type>text</frontend_type>
+			 			    <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>                            		
+                        </setemail>
+						<showreminder translate="label">
+							<label>Show Website Status </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</showreminder>
+                    </fields>					
+                </countdown>
+		    </groups>                        
+        </countdown>
+    </sections>
+</config>

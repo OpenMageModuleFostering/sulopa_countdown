@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Sulopa_Countdown",
+    "type": "magento-module",
+    "license": "OSL",
+    "homepage": "",
+    "description": "Inserts eye-catching countdown timer to indicate the beginning or ending time of your promotions, sales, discounts, registrations, or whatever else.",
+    "authors": [
+    {
+        "name": "Sulopa Sulotion",
+        "email": "info@sulopa.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

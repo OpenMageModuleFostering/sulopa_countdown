@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Sulopa_Countdown>
+            <version>0.1.0</version>
+        </Sulopa_Countdown>
+    </modules>	
+	<stores>
+        <default>
+            <web>
+                <routers>
+                     <standard><area>frontend</area><class>Sulopa_Countdown_Controller_Router_Standard</class></standard>
+                </routers>
+            </web>
+        </default>
+    </stores>	
+	<default>
+		<web>
+            <routers> 
+                <standard><area>frontend</area><class>Sulopa_Countdown_Controller_Router_Standard</class></standard>
+            </routers>
+		</web>
+		<countdown>
+			<countdown>
+				<timer><![CDATA[3]]></timer>
+				<settime><![CDATA[2015-07-12 12:00:00]]></settime>
+				<setmessage><![CDATA[This is my clock]]></setmessage>
+				<setemail><![CDATA[slaes@sulopastore.com]]></setemail>
+				<enabled>0</enabled>
+				<clockstatus>0</clockstatus>				
+			</countdown>
+		</countdown>
+	</default>	
+	<adminhtml>       
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Sulopa_Countdown>
+							<title>Sulopa Clock</title>
+							<sort_order>10</sort_order>
+						</Sulopa_Countdown>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <countdown>
+                                            <title>Clock by sulopa</title>
+                                            <sort_order>50</sort_order>
+                                        </countdown>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+					</children>
+				</admin>
+			</resources>
+		</acl>        
+    </adminhtml>    
+    <global>	
+		<helpers>
+            <countdown>
+                <class>Sulopa_Countdown_Helper</class>
+            </countdown>
+        </helpers>
+        <blocks>  
+            <countdown>  
+                <class>Sulopa_Countdown_Block</class>  
+            </countdown>
+        </blocks>        
+    </global> 
+</config>
